@@ -1,0 +1,7 @@
+1. EOF는 받으면 ""형태로 들어옴
+2. 가장 큰 수 float("inf")
+3. 가장 작은 수 float("-inf").
+4. 두 수에 정수 입력하기 n,m=map(int,input().split())
+5. 리스트에 정수 입력 ll=map(int,input().split())
+6. 함수 밖에있는 변수 건들일 때 함수 내에서 global 선언
+7. 리스트는 다 공유가 됨
