@@ -1,0 +1,1 @@
+[print(j[0]) for j in sorted(set([(n.strip(),len(n.strip())) for _ in range(int(input())) for n in [input()]]),key=lambda x:(x[1],x[0]))]
