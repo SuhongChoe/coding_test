@@ -7,18 +7,23 @@ for i in range(int(input())):
         cmd=input().split()
         cmd[1]=int(cmd[1])
         if cmd[0] == 'I':
-            if cmd[1] in dic:
+            try:
                 dic[cmd[1]]+=1
-            else:
+            except:
                 dic[cmd[1]]=1
                 bisect.insort_left(d,cmd[1])
         elif dic:
             if cmd[1]==-1:
-
+                if dic[d[0]]==1:
+                    del dic[d.popleft()]
+                else:
+                    dic[d[0]]-=1
             else:
-                heappop(heap_max)
-                heap_min.pop()
-    if heap_max:
-        print(heappop(heap_max)[1],heappop(heap_min))
+                if dic[d[-1]]==1:
+                    del dic[d.pop()]
+                else:
+                    dic[d[-1]]-=1
+    if d:
+        print(d[-1],d[0])
     else:
         print("EMPTY")
