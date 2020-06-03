@@ -10,20 +10,21 @@ def binary():
     while l<=r:
         mid=(l+r)//2
         bluelay=0
+        cnt=1
         temp=0
-        cnt = 1
         for i in ll:
-            if temp+i>mid:
+            if bluelay+i>mid:
+                temp=max(bluelay,temp)
                 cnt+=1
-                bluelay=max(bluelay,temp)
-                temp=i
+                bluelay=i
             else:
-                temp+=i
+                bluelay+=i
+        temp = max(bluelay, temp)
         if cnt<=m:
-            ans=max(mid,bluelay,temp)
             r=mid-1
+            ans=mid
         else:
             l=mid+1
-    print(ans)
+    return ans
 
-binary()
+print(binary())
